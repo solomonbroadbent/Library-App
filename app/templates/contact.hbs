@@ -1,1 +1,24 @@
-{{outlet}}
+<div>
+  <form>
+    <div class="form-group-lg">
+      <label for="emailAddressInput">
+        Email address
+      </label>
+      {{input type="email" class="form-control" id="emailAddressInput" placeholder="Enter your email address"
+              value=emailAddress}}
+      <label for="messageTextInput">
+        Message text
+      </label>
+      {{textarea class="form-control" id="messageTextInput" placeholder="Enter message" value=messageText}}
+      <div class="alert alert-success alert-dismissable show" role="submitAlert">
+        {{submitAlertMessage}}
+        <button type="button" class="close" data-dismiss="submitAlert">
+          <span>
+            &times;
+          </span>
+        </button>
+      </div>
+      <button type="submit" class="btn btn-primary" {{action 'submitMessage'}}>Send message</button>
+    </div>
+  </form>
+</div>

@@ -1,10 +1,11 @@
 //import {computed, observer} from '@ember/object'
 import Controller from '@ember/controller';
-import { match, not } from '@ember/object/computed';
+import {match, not} from '@ember/object/computed';
 
 export default Controller.extend({
-  isValid: match('emailAddress',  /^.+@.+\..+$/),
+  isValid: match('emailAddress', /^.+@.+\..+$/),
   isDisabled: not('isValid'),
+  headerMessage: 'Header Message',
   actions: {
     saveInvitation() {
       const verifiedEmailAddress = this.get('emailAddress');
@@ -13,10 +14,12 @@ export default Controller.extend({
         emailAddress: verifiedEmailAddress
       });
       invitation.save();
-    },
+    }
+    ,
     setEmailAddressToBlank() {
       this.set('emailAddress', '');
     }
   }
 
-});
+})
+;
