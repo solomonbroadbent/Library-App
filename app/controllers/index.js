@@ -14,12 +14,7 @@ export default Controller.extend({
         emailAddress: verifiedEmailAddress
       });
       invitation.save();
-    }
-    ,
-    setEmailAddressToBlank() {
       this.set('emailAddress', '');
     }
   }
-
-})
-;
+});
